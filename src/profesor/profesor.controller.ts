@@ -9,12 +9,12 @@ export class ProfesorController {
 
   @Post()
   create(@Param('id') id: string,  createProfesorDto: CreateProfesorDto) {
-    return "Aqui se van a REGISTRAR los profesores";
+    return this.profesorService.create(createProfesorDto);
   }
 
-  @Get(':id')
-  findAll(@Param('id') id: string) {
-    return "Aqui se van a Consultar los profesores" + id ;
+  @Get()
+  findAll(){
+    return this.profesorService.findAll(); ;
   }
 
   @Get(':id')
@@ -24,11 +24,11 @@ export class ProfesorController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateProfesorDto: UpdateProfesorDto) {
-    return "Aqui se van a ACTUALIZAR el profesor con el ID: " + id;
+    return this.profesorService.update(+id, updateProfesorDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return "Aqui se vana a Eliminar los profesores con el ID: " + id;
+    return this.profesorService.remove(+id);
   }
 }

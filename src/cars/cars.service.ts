@@ -5,22 +5,22 @@ import { UpdateCarDto } from './dto/update-car.dto';
 @Injectable()
 export class CarsService {
   create(createCarDto: CreateCarDto) {
-    return 'This action adds a new car';
+    return 'se ha creado un carro';
   }
 
   findAll() {
-    return `This action returns all cars`;
+    return `se han encontrado todos los carros`;
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} car`;
+    return `se ha encontrado el carro con el ID:${id}`;
   }
 
   update(id: number, updateCarDto: UpdateCarDto) {
-    return `This action updates a #${id} car`;
+    return `se ha actualizado el carro con el ID:${id}`;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} car`;
+    return `se ha eliminado el carro con el ID:${id}`;
   }
 }

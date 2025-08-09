@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/common';
 import { AdministradorService } from './administrador.service';
 import { CreateAdministradorDto } from './dto/create-administrador.dto';
 import { UpdateAdministradorDto } from './dto/update-administrador.dto';
@@ -8,27 +8,32 @@ export class AdministradorController {
   constructor(private readonly administradorService: AdministradorService) {}
 
     @Post()
-    create(@Param('id') id: string, @Body() createAdministradorDto: CreateAdministradorDto) {
-      return "Aqui se van a REGISTRAR los Administradores";
+    create(@Body() createAdministradorDto: CreateAdministradorDto) {
+      return this.administradorService.create(CreateAdministradorDto);
     }
 
  @Get()
-  findAll(@Param('id') id: string) {
-    return "Aqui se van a Consultar los Administradores";
+  findAll() {
+    return this.administradorService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.administradorService.findAll();
+    return this.administradorService.findOne(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateAdministradorDto: UpdateAdministradorDto) {
-    return "Aqui se van a ACTUALIZAR los Administradores con el ID: " + id;
+    return this.administradorService.update(+id, updateAdministradorDto);
+  }
+
+  @Put(':id')
+  replace(@Param('id') id: string, @Body() updateAdministradorDto: UpdateAdministradorDto) {
+    return this.administradorService.update(+id, updateAdministradorDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return "Aqui se vana a Eliminar los Administradores con el ID: " +id;
+    return this.administradorService.remove(+id);
   }
 }

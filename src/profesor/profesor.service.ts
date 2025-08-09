@@ -5,22 +5,22 @@ import { UpdateProfesorDto } from './dto/update-profesor.dto';
 @Injectable()
 export class ProfesorService {
   create(createProfesorDto: CreateProfesorDto) {
-    return 'This action adds a new profesor';
+    return 'se ha creado un nuevo profesor';
   }
 
   findAll() {
-    return `This action returns all profesor`;
+    return `se han encontrado todos los profesores`;
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} profesor`;
+    return `se ha encontrado el profesor con el ID: ${id}`;
   }
 
   update(id: number, updateProfesorDto: UpdateProfesorDto) {
-    return `This action updates a #${id} profesor`;
+    return `se ha actualizado el estudiante con el ID: ${id}`;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} profesor`;
+    return `se ha eliminado el profesor con el ID: ${id}`;
   }
 }

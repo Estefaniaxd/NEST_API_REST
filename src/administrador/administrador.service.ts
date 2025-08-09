@@ -5,22 +5,22 @@ import { UpdateAdministradorDto } from './dto/update-administrador.dto';
 @Injectable()
 export class AdministradorService {
   create(createAdministradorDto: CreateAdministradorDto) {
-    return 'This action adds a new administrador';
+    return 'se ha creado un nuevo adminsitrador';
   }
 
   findAll() {
-    return `This action returns all administrador`;
+    return `se han encontrado todos los administradores`;
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} administrador`;
+    return `se ha encontrado el administrador con el ID: ${id}`;
   }
 
   update(id: number, updateAdministradorDto: UpdateAdministradorDto) {
-    return `This action updates a #${id} administrador`;
+    return `se ha actualizado el administrador con el ID: ${id}`;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} administrador`;
+    return `se ha eliminado el administrador con el ID: ${id}`;
   }
 }

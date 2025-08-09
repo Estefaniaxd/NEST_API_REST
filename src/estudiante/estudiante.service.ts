@@ -5,22 +5,22 @@ import { UpdateEstudianteDto } from './dto/update-estudiante.dto';
 @Injectable()
 export class EstudianteService {
   create(createEstudianteDto: CreateEstudianteDto) {
-    return 'This action adds a new estudiante';
+    return 'se ha creado un nuevo estudiante';
   }
 
   findAll() {
-    return `This action returns all estudiante`;
+    return `se han encontrado todos los estudiantes`;
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} estudiante`;
+    return `se ha encontrado el estudiante con el ID: ${id}`;
   }
 
   update(id: number, updateEstudianteDto: UpdateEstudianteDto) {
-    return `This action updates a #${id} estudiante`;
+    return `se ha actualizado el estudiante con el ID: ${id}`;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} estudiante`;
+    return `se ha eliminado el estudiante con el ID: ${id}`;
   }
 }
