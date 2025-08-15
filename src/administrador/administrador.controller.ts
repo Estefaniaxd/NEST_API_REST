@@ -9,7 +9,7 @@ export class AdministradorController {
 
     @Post()
     create(@Body() createAdministradorDto: CreateAdministradorDto) {
-      return this.administradorService.create(CreateAdministradorDto);
+      return this.administradorService.create(createAdministradorDto);
     }
 
  @Get()
@@ -34,6 +34,10 @@ export class AdministradorController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.administradorService.remove(+id);
+    this.administradorService.remove(+id);
+    return {
+      success : true,
+      admin_eliminado: id
+    }
   }
 }
