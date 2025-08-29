@@ -9,12 +9,12 @@ export class EstudianteController {
 
   @Post()
   create(@Param('id') id: string, @Body()createEstudianteDto: CreateEstudianteDto) {
-    return "Aqui se van a REGISTRAR los estudiantes";
+    return this.estudianteService.create(createEstudianteDto);
   }
 
-  @Get(':id')
-  findAll(@Param('id') id: string) {
-    return "Aqui se van a Consultar los estudiantes" + id;
+  @Get()
+  findAll() {
+    return this.estudianteService.findAll();
   }
 
   @Get(':id')
@@ -24,11 +24,11 @@ export class EstudianteController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateEstudianteDto: UpdateEstudianteDto) {
-    return "Aqui se van a ACTUALIZAR el estudiante con el ID: " + id;
+    return this.estudianteService.update(+id, updateEstudianteDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return "Aqui se vana a Eliminar los estudiantes con el ID: " +id;
+    return this.estudianteService.remove(+id);
   }
 }
