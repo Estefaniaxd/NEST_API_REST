@@ -1,0 +1,15 @@
+meta {
+  name: Consultar Profesor
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8000/profesor/34
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Actualizar Carro
+  type: http
+  seq: 4
+}
+
+patch {
+  url: http://localhost:8000/cars/8000
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
