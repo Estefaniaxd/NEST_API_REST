@@ -5,18 +5,24 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class CursosService {
-  constructor(private servicio: PrismaService) {}
+  constructor(private prismaService: PrismaService) {}
 
   create(createCursoDto: CreateCursoDto) {
-    return "This action adds a new curso";
+    return this.prismaService.cursos.create({
+      data: {
+        descripcion: createCursoDto.descripcion,
+        nombre: createCursoDto.nombre,
+        precio: createCursoDto.precio,
+      },
+    });
   }
 
   findAll() {
-    return this.servicio.cursos.findMany();
+    return this.prismaService.cursos.findMany();
   }
 
   findOne(id: number) {
-    return this.servicio.cursos.findUnique({
+    return this.prismaService.cursos.findUnique({
       where: { id },
     });
   }
